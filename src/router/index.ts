@@ -14,7 +14,11 @@ export const router = createRouter({
 })
 
 router.beforeEach((_to, _from) => {
-  return true
+  if (_to.path === '/home') {
+    return {
+      path: '/',
+    }
+  }
 })
 
 router.afterEach((to) => {
