@@ -19,6 +19,7 @@ router.beforeEach((_to, _from) => {
       path: '/',
     }
   }
+  return true
 })
 
 router.afterEach((to) => {
