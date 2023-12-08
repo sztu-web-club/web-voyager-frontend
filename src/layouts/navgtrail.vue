@@ -2,7 +2,6 @@
 import '@mdui/icons/home.js'
 import '@mdui/icons/question-mark.js'
 import '@mdui/icons/videogame-asset.js'
-import '@mdui/icons/manage-accounts.js'
 import '@mdui/icons/settings.js'
 import '@mdui/icons/people.js'
 import '@mdui/icons/menu.js'
@@ -21,8 +20,8 @@ const goContest = async () => {
   await router.push('/contest')
 }
 
-const goManage = async () => {
-  await router.push('/manage')
+const goPersonal = async () => {
+  await router.push('/personal')
 }
 </script>
 
@@ -31,12 +30,17 @@ const goManage = async () => {
     <mdui-button-icon slot="top">
       <mdui-icon-menu></mdui-icon-menu>
     </mdui-button-icon>
-    <mdui-button-icon slot="bottom">
+    <mdui-button-icon
+      slot="bottom"
+      @click="goPersonal"
+    >
       <mdui-avatar>
         <mdui-icon-people></mdui-icon-people>
       </mdui-avatar>
     </mdui-button-icon>
-    <mdui-button-icon slot="bottom">
+    <mdui-button-icon
+      slot="bottom"
+    >
       <mdui-icon-settings></mdui-icon-settings>
     </mdui-button-icon>
 
@@ -51,10 +55,6 @@ const goManage = async () => {
     <mdui-navigation-rail-item @click="goContest">
       <mdui-icon-videogame-asset slot="icon"></mdui-icon-videogame-asset>
       Contest
-    </mdui-navigation-rail-item>
-    <mdui-navigation-rail-item @click="goManage">
-      <mdui-icon-manage-accounts slot="icon"></mdui-icon-manage-accounts>
-      Manage
     </mdui-navigation-rail-item>
   </mdui-navigation-rail>
 </template>
