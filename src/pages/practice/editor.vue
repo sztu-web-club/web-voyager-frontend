@@ -1,0 +1,14 @@
+<script setup lang='ts'>
+import { Repl } from '@vue/repl'
+import Monaco from '@vue/repl/monaco-editor'
+</script>
+
+<template>
+  <div class="h-full">
+    <Repl :editor="Monaco" />
+  </div>
+</template>
+
+<style>
+
+</style>
