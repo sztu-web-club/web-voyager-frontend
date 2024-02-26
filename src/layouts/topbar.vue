@@ -10,6 +10,8 @@ router.afterEach((to) => {
     title.value = to.meta.title
 })
 
+// TODO:待封装风格调整函数
+
 const theme = ref()
 
 theme.value = getTheme()
