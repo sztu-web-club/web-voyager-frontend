@@ -47,8 +47,8 @@ export abstract class AbstractRepo {
     })
   }
 
-  async post<T, D>(url: Input, options?: Options & { json?: D }) {
-    return await this.request.post(url, options).json<T>()
+  async post<T, D>(url: Input, data: D, options?: Options & { json: never }) {
+    return await this.request.post(url, Object.assign(options ?? {}, { json: data })).json<T>()
   }
 
   async get<T>(url: Input, options?: Options) {
